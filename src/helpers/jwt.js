@@ -18,8 +18,7 @@ export const signToken = (user) => {
     }
     return jwt.sign(
         { id: user._id.toString(), 
-            email: user.email,
-            role:user.role },
+            email: user.email},
         process.env.JWT_SECRET,
         { expiresIn: "1h" }
     );
